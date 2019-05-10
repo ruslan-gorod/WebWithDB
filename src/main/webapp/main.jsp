@@ -19,10 +19,10 @@
                 <td><c:out value="${user.getName()}" /> </td>
                 <td><c:out value="${user.getRole()}" /> </td>
                 <td><c:out value="${user.getLogin()}" /> </td>
-                <td><a href="editServlet?login=${user.getLogin()}">edit</a> </td>
-                <td><a href="delServlet?login=${user.getLogin()}">delete</a> </td></tr>
+                <td><a href="/editServlet?login=${user.getLogin()}">edit</a> </td>
+                <td><a href="/delServlet?login=${user.getLogin()}">delete</a> </td></tr>
             </c:forEach>
-        </>
+        </table>
         <form action="add" method="post">
             <input type="submit" value="Add" content="Add">
         </form>

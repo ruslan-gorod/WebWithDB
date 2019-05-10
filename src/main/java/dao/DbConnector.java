@@ -2,8 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import org.apache.log4j.Logger;
 
-public class DBConnector {
+public class DbConnector {
+    private static Connection connection;
+    private static final Logger logger = Logger.getLogger(UserDb.class);
     private static final String url = "jdbc:mysql://localhost:3306/mysite?"
             + "useUnicode=true"
             + "&useJDBCCompliantTimezoneShift=true"
@@ -12,14 +15,17 @@ public class DBConnector {
     private static final String username = "root";
     private static final String password = "root";
 
-    public static Connection connect(){
+    static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(url,username,password);
+            logger.debug("Connect to DB");
+            connection = DriverManager.getConnection(url, username, password);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Can't connect to DB;", e);
         }
-        return null;
     }
 
+    public static Connection connect() {
+        return connection;
+    }
 }

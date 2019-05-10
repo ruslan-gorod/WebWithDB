@@ -7,7 +7,7 @@
     <title>Registration form</title>
 </head>
 <body>
-<form action="editServlet" method="post" class="login-form">
+<form action="/editServlet" method="post" class="login-form">
     Login <input name="login" type="text" class="my-input" required value="${login}"/><br>
     Password <input name="password" type="password" class="my-input" required value="${password}"/><br>
     Confirm Password <input name="confirmPassword" type="password" class="my-input" required value="${password}"/><br>

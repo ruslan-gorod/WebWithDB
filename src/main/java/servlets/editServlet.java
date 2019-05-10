@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import models.User;
 
-@WebServlet(value = "/servlets.editServlet")
+@WebServlet(value = "/editServlet")
 public class editServlet extends HttpServlet {
     @Override
     protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
