@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import models.Roles;
 import models.User;
 import dao.UserDb;
 import org.apache.log4j.Logger;
@@ -43,7 +44,7 @@ public class MyServlet extends HttpServlet {
                 registration(req, resp, "/registration.jsp");
             } else {
                 if (newUser == null) {
-                    newUser = new User(users.size() + 1, name, login, password, "user");
+                    newUser = new User(users.size() + 1, name, login, password, Roles.user.toString());
                     logger.debug("Create new User with role - user;");
                 } else {
                     newUser.setId(users.size() + 1);
