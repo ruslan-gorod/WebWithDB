@@ -14,11 +14,11 @@
     Name <input name="nameUser" type="text" class="my-input" required value="${name}"/><br>
     Role <select class="my-input" name="roleUser">
         <option selected value="${role}">${role}</option>
-            <c:if test="${role.equals(\"user\")}">
-                 <option value="admin">admin</option>
+            <c:if test="${role.equals(\"USER\")}">
+                 <option value="ADMIN">ADMIN</option>
             </c:if>
             <c:if test="${role.equals(\"admin\")}">
-                 <option value="user">user</option>
+                 <option value="USER">USER</option>
             </c:if>
     </select>
     <br>
